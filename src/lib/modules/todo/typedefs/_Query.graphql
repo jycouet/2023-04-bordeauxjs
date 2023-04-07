@@ -1,0 +1,22 @@
+extend type Query {
+	todo(id: ID!): Todo
+	todoConnection(first: Int, after: String, last: Int, before: String): TodoConnection
+}
+
+type TodoConnection {
+	edges: [TodoEdge]
+	pageInfo: PageInfo
+	totalCount: Int
+}
+
+type TodoEdge {
+	cursor: String
+	node: Todo
+}
+
+type PageInfo {
+	hasNextPage: Boolean
+	hasPreviousPage: Boolean
+	startCursor: String
+	endCursor: String
+}

@@ -1,0 +1,14 @@
+extend type Mutation {
+	todoCreate(fields: TodoCreateFields!): Todo
+	todoUpdate(id: ID!, fields: TodoUpdateFields!): Todo
+	todoDelete(id: ID!): Todo
+}
+
+input TodoCreateFields {
+	title: String!
+}
+
+input TodoUpdateFields {
+	title: String
+	done: Boolean
+}

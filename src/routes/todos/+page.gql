@@ -1,0 +1,10 @@
+query Todos {
+	todoConnection(first: 2) @paginate(name: "todos", mode: Infinite) {
+		edges {
+			node {
+				# title
+				...TodoItem
+			}
+		}
+	}
+}
